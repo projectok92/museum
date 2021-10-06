@@ -72,9 +72,6 @@ openPopupBtn.addEventListener('click', () => {
   popupBackground.classList.remove('delay');
   popupContainer.classList.remove('hidden');
 
-  // document.body.style.overflowY = 'hidden';
-  // document.body.style.maxHeight = '100vh';
-
 });
 
 const closePopup = document.querySelector('.close-cross');
