@@ -131,7 +131,19 @@ html {
   filter: invert(61%) sepia(27%) saturate(438%) hue-rotate(356deg) brightness(84%) contrast(85%);
 }
 
-h1 {
+.visuallyhidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: none;
+}
+
+.main-heading {
   color: #FFFFFF;
   font-family: Forum;
   font-weight: 400;
