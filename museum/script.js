@@ -111,3 +111,35 @@ menuCheckbox.addEventListener('click', ()=> {
 
 
 // Welcome Slider
+
+
+//Current slide
+let currentSlideFr = document.querySelector('.current-slide-fraction');
+
+const prevNum = () =>{
+
+  if (currentSlideFr.innerHTML === '01'){
+    currentSlideFr.innerHTML = '05';
+  } else {
+    currentSlideFr.innerHTML = `0${Number(currentSlideFr.innerHTML) - 1}`;
+  }
+}
+
+const nextNum = () =>{
+
+  if (currentSlideFr.innerHTML === '05'){
+    currentSlideFr.innerHTML = '01';
+  } else {
+    currentSlideFr.innerHTML = `0${Number(currentSlideFr.innerHTML) + 1}`;
+  }
+};
+
+const prevBtn = document.querySelector('.slider-btn-prev');
+prevBtn.addEventListener('click', prevNum);
+
+const nextBtn = document.querySelector('.slider-btn-next');
+nextBtn.addEventListener('click', nextNum);
+
+const activeSliderBullet = () =>{
+
+}
