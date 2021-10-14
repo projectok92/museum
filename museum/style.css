@@ -340,15 +340,22 @@ section {
 }
 
 .slider-btn {
-  display: block;
-  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 16px 0; */
   width: 30px;
+  height: 40px;
   border: none;
   background:none;
   outline: none;
   transition-duration: 500ms;
   overflow: hidden;
   cursor: pointer;
+}
+
+.slider-btn > img {
+  padding: 16px 0;
 }
 
 .hidden {

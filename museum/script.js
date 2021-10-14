@@ -114,20 +114,20 @@ menuCheckbox.addEventListener('click', ()=> {
 
 
 //Current slide
-let currentSlideFr = document.querySelector('.current-slide-fraction');
+const currentSlideFr = document.querySelector('.current-slide-fraction');
 
-const prevNum = () =>{
+const prevNum = () => {
 
-  if (currentSlideFr.innerHTML === '01'){
+  if (currentSlideFr.innerHTML === '01') {
     currentSlideFr.innerHTML = '05';
   } else {
     currentSlideFr.innerHTML = `0${Number(currentSlideFr.innerHTML) - 1}`;
   }
-}
+};
 
-const nextNum = () =>{
+const nextNum = () => {
 
-  if (currentSlideFr.innerHTML === '05'){
+  if (currentSlideFr.innerHTML === '05') {
     currentSlideFr.innerHTML = '01';
   } else {
     currentSlideFr.innerHTML = `0${Number(currentSlideFr.innerHTML) + 1}`;
@@ -140,6 +140,29 @@ prevBtn.addEventListener('click', prevNum);
 const nextBtn = document.querySelector('.slider-btn-next');
 nextBtn.addEventListener('click', nextNum);
 
-const activeSliderBullet = () =>{
+// const activeSliderBullet = () => {
 
-}
+// };
+
+
+
+
+
+
+
+
+// Gallary shuffle
+const gallaryNumbersRandomGenerator = () => {
+  let numbers = Array(15).fill().map((el, idx) => el = (idx + 1));
+
+  const shuffled = numbers
+  .map((value) => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value);
+
+  return shuffled;
+};
+
+const shuffeledPicsNumbers = gallaryNumbersRandomGenerator();
+const gallaryPics = document.querySelectorAll('.gallery-pic');
+gallaryPics.forEach((el, idx) => el.src = `./assets/img/gallery/gallery${shuffeledPicsNumbers[idx]}.jpg`);
